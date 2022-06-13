@@ -1,7 +1,6 @@
 ## Get direct dependencies for build target
 ```
-❯ go list -deps  -f '{{define "M"}}{{if not .Indirect}}{{.Path}}@{{.Version}}{{end}}{{end}}{{with .Module}}{{if not .Main}}{{if .Replace}}{{template "M" .Replace}}{{else}}{{template "M" .}}{{end}}{{end}}{{end}}' cmd/example.go
-github.com/fatih/color@v1.13.0
+❯ go list -deps  -f '{{define "M"}}{{if not .Indirect}}{{.Path}}@{{.Version}}{{end}}{{end}}{{with .Module}}{{if not .Main}}{{if .Replace}}{{template "M" .Replace}}{{else}}{{template "M" .}}{{end}}{{end}}{{end}}' cmd/example.go | sort -u
 ```
 
 ```
